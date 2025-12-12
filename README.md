@@ -26,17 +26,36 @@
 - Отключение автозапуска Sense (Sense Auto-Start)
 
 
+## ⚠️ Важно! Защита от изменений (Tamper Protection)
+
+Если **"Защита в реальном времени" не отключается**, это связано с функцией **Tamper Protection** (Защита от изменений).
+
+### Решение проблемы:
+1. **Автоматически**: Скрипт попытается отключить Tamper Protection через реестр
+2. **Вручную** (если автоматически не сработало):
+   - Откройте **Безопасность Windows** (Windows Security)
+   - Перейдите в **Защита от вирусов и угроз** → **Управление настройками**
+   - Найдите **Защита от изменений** (Tamper Protection)
+   - **Отключите** эту функцию
+   - Запустите скрипт заново
+
+### Если всё равно не работает:
+- Перезагрузите компьютер после выполнения скрипта
+- Убедитесь, что используете **локальную учетную запись** (не Microsoft Account)
+- На некоторых версиях Windows может потребоваться отключение через Group Policy Editor (`gpedit.msc`)
+
+
 ## Как запустить?
 - Запустить `DieDefender.bat` от имени администратора.
 
 
 ## Как запустить без скачивания?
-- PowerShell от имени администратора:
+- **PowerShell** от имени администратора:
 ```powershell
 iwr https://raw.githubusercontent.com/zahargm808/diedefender/main/DieDefender.bat -OutFile $env:TEMP\dd.bat; Start-Process $env:TEMP\dd.bat -Verb RunAs
 ```
 
-- CMD от имени администратора:
+- **CMD** от имени администратора:
 ```cmd
 curl -L https://raw.githubusercontent.com/zahargm808/diedefender/main/DieDefender.bat -o %TEMP%\dd.bat && start "" %TEMP%\dd.bat
 ```
