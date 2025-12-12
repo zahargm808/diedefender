@@ -1,6 +1,5 @@
 @echo off
 chcp 65001 >nul
-color 0A
 echo ========================================
 echo Windows Defender Disabler
 echo ========================================
@@ -108,10 +107,9 @@ echo ========================================
 echo Windows Defender completely disabled!
 echo ========================================
 echo.
-color 0E
 echo WARNING: Your system is now UNPROTECTED!
-echo Use at your own risk.
 echo.
-color 0A
 
-echo Maybe you need reboot to apply all changes. bye-bye.
+echo Maybe you need reboot to apply all changes.
+echo.
+pause
